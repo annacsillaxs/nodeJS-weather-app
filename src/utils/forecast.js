@@ -11,7 +11,7 @@ const forecast = (lat, lon, callback) => {
       callback(`Unable to provide location: ${body.error.info}`, undefined);
     } else {
       callback(undefined, {
-        data: `The outside temperature is ${body.current.temperature} degree celsius, feels like ${body.current.feelslike} degree celsius.`,
+        data: `The weather is ${body.current.weather_descriptions} in ${body.location.name}. The outside temperature is ${body.current.temperature} degree celsius, feels like ${body.current.feelslike} degree celsius.`,
       });
     }
   });
